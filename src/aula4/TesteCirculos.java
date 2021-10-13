@@ -14,6 +14,9 @@ public class TesteCirculos {
 		c2.x = 8.3f;
 		c2.y = 5.5f;	
 		c2.print();
+		
+		Circulos c3 = new Circulos(3, 2.8f, 5.8f);
+		c3.print();
 				
 	}
 
