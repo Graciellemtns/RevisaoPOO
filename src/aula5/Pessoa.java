@@ -1,15 +1,28 @@
 package aula5;
+
 //ENCAPSULAMENTO
 public class Pessoa {
-	//ATRIBUTOS
+	// ATRIBUTOS
+	public final static int TEMPERATURA_MAXIMA = 42; // define um atributo como constante, nao pode ser alterado seu
+														// valor
+	private static int totalPessoas = 0;
 	private String CPF, nome;
 	private float peso, altura;
-	
-	//CONSTRUTORES
+
+	// CONSTRUTORES
 	public Pessoa() {
+		this.totalPessoas++;
 	}
 
 	public Pessoa(String cPF, String nome, float peso, float altura) {
+		this(); //chama o construtor sem parametros
+		CPF = cPF;
+		this.nome = nome;
+		this.peso = peso;
+		this.altura = altura;
+	}
+
+	public Pessoa(float altura, String nome, String cPF, float peso) {
 		super();
 		CPF = cPF;
 		this.nome = nome;
@@ -19,19 +32,20 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [CPF=" + CPF + ", nome=" + nome + ", peso=" + peso + ", altura=" + altura + "]";
+		return "Pessoa [totalPessoas= "+gettotalPessoas()+" CPF=" + CPF + ", nome=" + nome + ", peso=" + peso + ", altura=" + altura + "]";
 	}
-	
+
 	// Para alterar a altura
 	public void setAltura(float a) {
 		this.altura = a;
 	}
-	
-	//ENCAPSULAMENTO - deixa os atributos em private e cria os getters e setters para conseguir ver e fazer alteracoes
+
+	// ENCAPSULAMENTO - deixa os atributos em private e cria os getters e setters
+	// para conseguir ver e fazer alteracoes
 	// Para exibir apenas a altura
 	public float getAltura() {
 		return this.altura;
-		
+
 	}
 
 	public String getCPF() {
@@ -57,6 +71,11 @@ public class Pessoa {
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
+
+	public static int gettotalPessoas() {
+		return totalPessoas;
+	}
 	
 	
+
 }

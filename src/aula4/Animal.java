@@ -14,7 +14,7 @@ public class Animal {
 
 	}
 
-	public void nascer() {
+	private void nascer() {
 		nome = JOptionPane.showInputDialog("Nome: ");
 		classe = JOptionPane.showInputDialog("Classe: ");
 		familia = JOptionPane.showInputDialog("Familia: ");
